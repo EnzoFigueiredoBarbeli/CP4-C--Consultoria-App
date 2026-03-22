@@ -1,0 +1,37 @@
+﻿@model List<Solicitacao>
+
+<h2 class="text-center mb-4">Painel do Tech Lead</h2>
+
+<table class="table table-hover shadow">
+    <thead class="table-dark">
+        <tr>
+            <th>Cliente</th>
+            <th>Email</th>
+            <th>Problema</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.NomeCliente</td>
+                <td>@s.Email</td>
+                <td>@s.ProblemaEscolhido</td>
+                <td>
+                    <span class="badge
+                        @(s.Status == "Aprovado" ? "bg-success" :
+                                            s.Status == "Reprovado" ? "bg-danger" : "bg-warning")">
+                        @s.Status
+                    </span>
+                </td>
+                <td>
+                    <a href="/Admin/Aprovar/@s.Id" class="btn btn-success btn-sm">✔</a>
+                    <a href="/Admin/Reprovar/@s.Id" class="btn btn-danger btn-sm">✖</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿@model Problema
+
+<div class="container mt-5">
+    <div class="card shadow p-4 rounded-4">
+        <h3 class="text-center mb-4">Solicitar: @Model.Nome</h3>
+
+        <form method="post">
+            <input type="hidden" name="ProblemaEscolhido" value="@Model.Nome" />
+
+            <div class="mb-3">
+                <label>Nome</label>
+                <input name="NomeCliente" class="form-control" required minlength="3" />
+            </div>
+
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="Email" class="form-control" required />
+            </div>
+
+            <button class="btn btn-success w-100 rounded-pill">
+                Enviar Solicitação
+            </button>
+        </form>
+    </div>
+</div>

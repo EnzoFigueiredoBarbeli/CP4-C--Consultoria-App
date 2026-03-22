@@ -1,0 +1,20 @@
+﻿<h2>Login</h2>
+
+@if (ViewBag.Erro != null)
+{
+    <div class="alert alert-danger">@ViewBag.Erro</div>
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label>Usuário</label>
+        <input name="usuario" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Senha</label>
+        <input type="password" name="senha" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary">Entrar</button>
+</form>

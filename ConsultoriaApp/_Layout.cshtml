@@ -1,0 +1,11 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <span>Olá, @User.Identity.Name</span>
+    <a href="/Login/Logout" class="btn btn-danger">Logout</a>
+}
+else
+{
+    <a href="/Login" class="btn btn-primary">Login</a>
+}
+
+
